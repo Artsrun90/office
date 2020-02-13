@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userName: MyString
+  login: MyString
+  password: MyString
+  gender: MyString
+  date_Of_Birth: 2020-02-13
+  roll: one
+
+two:
+  userName: MyString
+  login: MyString
+  password: MyString
+  gender: MyString
+  date_Of_Birth: 2020-02-13
+  roll: two
