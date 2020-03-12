@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'getTasks/:id' => 'user_task#getTasks'
   resources :users
   resources :tasks
+  resources :roll
 
 end

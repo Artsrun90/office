@@ -1,14 +1,10 @@
 class UserTaskController < ApplicationController
     before_action :set_users, only: [:getTasks]
 
-
-
-
     def GetAllUserTasks 
         ustask= UserTask.joins(:user).joins(:task).select('userName','taskName')
         render json: ustask
-    end
-    
+    end    
     
     
     def getTasks 
