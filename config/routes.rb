@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/getAllUsers' => 'users#getAllUsers'
   get 'GetAllUserTasks' => 'user_task#GetAllUserTasks'
   get 'getTasks/:id' => 'user_task#getTasks'
+  resources :projects
   resources :users
   resources :tasks
   resources :roll
