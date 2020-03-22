@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user,  only: [:index, :update, :show]
+  before_action :authenticate_user,  only: [:index, :update, :show, :getAllUsers]
   before_action :set_users, only: [:update, :destroy, :show]
-  # before_action :authorize_as_admin, only: [:destroy]
-  # before_action :authorize, only: [:update]
+  before_action :authorize_as_admin, only: [:destroy, :getAllUsers]
+  before_action :authorize, only: [:update]
 
 
-    def getAllUsers
-      
-        users = User.select("userName","gender","email")
+    def getAllUsers      
+        users = User.select("userName", "gender", "login", "email", "roll_id", "gender", "date_Of_Birth")
         render json: users, status: :ok
     end
 

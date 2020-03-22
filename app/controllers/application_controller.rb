@@ -4,6 +4,6 @@ class ApplicationController < ActionController::API
   protected
   
   def authorize_as_admin
-    return head(:unauthorized) unless !current_user.nil? && current_user.is_admin?
+    return head(:forbidden) unless !current_user.nil? && current_user.is_admin?
   end
 end
