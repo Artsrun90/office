@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  validates_presence_of :userName, presence: true
+  # validates_presence_of :userName, presence: true
   validates_presence_of :email, presence: true
 
   belongs_to :roll

@@ -1,6 +1,7 @@
 class RollController < ApplicationController
-
-    before_action :set_roll, only: [:show, :update, :destroy]
+    before_action :authenticate_user
+    before_action :set_roll, only: [:show, :update, :destroy, :getRoleIdForAccount]
+    before_action :authorize_as_admin, only: [:index, :show, :create, :update, :destroy]
 
     def index
         @roll = Roll.all
@@ -9,6 +10,10 @@ class RollController < ApplicationController
 
     def show
         # user = User.where(id: params[:id]).select("userName")
+        render json: @roll, status: :ok
+    end 
+
+    def getRoleIdForAccount
         render json: @roll, status: :ok
     end 
 

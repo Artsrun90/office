@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
-    before_action :authenticate_user,  only: [:index]
-    before_action :authorize_as_admin, only: [:index, :show, :create, :update, :destroy]
+    before_action :authenticate_user
     before_action :set_tasks, only: [:show, :update, :destroy]
+    before_action :authorize_as_admin, only: [:index, :show, :create, :update, :destroy]
 
     def index
         @tasks = Task.all
